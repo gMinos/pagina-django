@@ -4,14 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Restaurante</title>
 </head>
 
 <body>
   <nav>
     <li><a href="{% url 'principal' %}">Principal</a></li>
-    <li><a href="{% url 'registrarse' %}">Registrarse</a></li>
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'cerrar_sesion' %}">Cerar sesion</a></li>
+    {% else %}
     <li><a href="{% url 'iniciar_sesion' %}">Iniciar sesion</a></li>
+    <li><a href="{% url 'registrarse' %}">Registrarse</a></li>
+    {% endif %}
   </nav>
 </body>
 

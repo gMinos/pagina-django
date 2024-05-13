@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.db import IntegrityError
 
 
@@ -39,4 +39,5 @@ def iniciar_sesion(request):
 
 
 def cerrar_sesion(request):
-    pass
+    logout(request)
+    return redirect('principal')

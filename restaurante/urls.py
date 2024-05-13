@@ -21,4 +21,7 @@ from miapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.principal, name="principal"),
+    path('registrarse/', views.registrarse, name="registrarse"),
+    path('iniciar_sesion/', views.iniciar_sesion, name="iniciar_sesion"),
+    path('cerra_sesion/', views.cerrar_sesion, name="cerrar_sesion"),
 ]

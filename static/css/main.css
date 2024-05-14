@@ -1,0 +1,228 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  padding: 10px 0;
+  font-size: 20px;
+  text-align: center;
+  background-color: #64b5f6;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+nav li a:hover {
+  color: #1976d2;
+}
+
+.main-content {
+    text-align: center; /* Centra el contenido */
+    margin: 20px; /* Agrega un poco de espacio alrededor del contenido */
+}
+
+.title {
+    margin-bottom: 10px; /* Agrega un poco de espacio entre el título y el mensaje */
+}
+
+.details {
+    font-style: italic; /* Hace que el mensaje se vea como una indicación */
+    color: #666; /* Cambia el color del mensaje para que sea menos prominente */
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    padding: 0 20px; /* Agrega relleno a ambos lados del contenedor */
+}
+
+@media (min-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr); /* Muestra al menos 4 imágenes por fila en pantallas más grandes */
+        padding: 0; /* Elimina el relleno en pantallas más grandes */
+    }
+}
+
+.gallery-container img {
+    width: 100%; /* Ajustar el ancho al 100% del contenedor */
+    height: 200px; /* Establecer una altura fija para todas las imágenes */
+    object-fit: cover; /* Ajustar el contenido de la imagen para que cubra el tamaño definido */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.1);
+}
+
+.forms {
+    max-width: 400px;
+    margin: auto; /* Centra horizontalmente */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
+    text-align: center; /* Centra los elementos internamente */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Ajusta el texto a la izquierda dentro de la caja */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    text-align: center; /* Centra el texto dentro de la caja */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ajusta el ancho del borde y el relleno dentro de la caja */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none; /* Elimina el resaltado del borde al hacer clic */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto; /* Centra el botón horizontalmente */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.preferred-foods {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.preferred-foods h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.preferred-foods-list {
+    list-style: none;
+    padding: 0;
+}
+
+.preferred-food {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Para evitar que el texto se desborde */
+}
+
+.food-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Cambia el color del texto a gris oscuro */
+}
+
+
+.reason {
+    margin-top: 5px;
+    color: #666;
+}
+
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 5px;
+}
+
+.contact-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+h2 {
+  display: block;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

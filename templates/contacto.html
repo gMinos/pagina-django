@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="contact-container">
+    <div class="contact-info">
+        <h1>Puedes contactarnos a traves de:</h1>
+        <ul>
+            <li><strong>Whatsapp:</strong> 3202811921</li>
+            <li><strong>Correo electrónico:</strong> falso@restaurante.com</li>
+            <li><strong>Redes sociales:</strong> <a href="https://facebook.com/restaurante">Facebook</a>, <a href="https://twitter.com/restaurante">Twitter</a>, <a href="https://instagram.com/restaurante">Instagram</a></li>
+        </ul>
+    </div>
+    <div class="contact-form">
+        <h2>Envíanos un mensaje</h2>
+        <form action="/enviar_mensaje/" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder="Tu correo electronico">
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" rows="4" required placeholder="Tu mensaje"></textarea>
+            </div>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

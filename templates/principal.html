@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Restaurante</title>
-</head>
-
-<body>
-  <h1>Principal</h1>
-</body>
-
-</html>
+<title>Restaurante</title>
+<div class="main-content">
+        <h1 class="title">Nuestros mejores platos</h1>
+        <p class="details">Haz clic en las imágenes para obtener más detalles</p>
+        <div class="gallery-container">
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/desayuno.jpg' %}" alt="desayuno-img"></a>
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/emparedado.jpg' %}" alt="emparedado-img"></a>
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/espagueti.jpg' %}" alt="espagueti-img"></a>
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/hambuerguesaVegada.jpg' %}" alt="hambuerguesaVegada-img"></a>
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/omelet.jpg' %}" alt="omelet-img"></a>
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/pasta.jpg' %}" alt="pasta-img"></a>
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/pollo.jpg' %}" alt="pollo-img"></a>
+            <a href="{% url 'informacion' %}"><img src="{% static 'img/verduras.jpg' %}" alt="verduras-img"></a>
+        </div>
+    </div>
 {% endblock %}
+

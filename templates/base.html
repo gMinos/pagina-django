@@ -1,17 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Restaurante</title>
+  <title></title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 
 <body>
   <nav>
     <li><a href="{% url 'principal' %}">Principal</a></li>
+    <li><a href="{% url 'contacto' %}">Contacto</a></li>
     {% if user.is_authenticated %}
-    <li><a href="{% url 'cerrar_sesion' %}">Cerar sesion</a></li>
+    <li><a href="{% url 'preferencias' %}">Comidas preferidas</a></li>
+    <li><a href="{% url 'cerrar_sesion' %}">Cerrar sesion</a></li>
     {% else %}
     <li><a href="{% url 'iniciar_sesion' %}">Iniciar sesion</a></li>
     <li><a href="{% url 'registrarse' %}">Registrarse</a></li>
@@ -20,6 +24,5 @@
 </body>
 
 </html>
-
 {% block content %}
 {% endblock %}

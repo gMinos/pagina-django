@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
+from .models import Preferencia
 
 
 def principal(request):
@@ -34,7 +35,7 @@ def registrarse(request):
         })
 
 
-def iniciar_sesion(request):
+def iniciar_session(request):
     if request.method == 'GET':
         return render(request, 'iniciar_sesion.html', {
             'form': AuthenticationForm()
@@ -53,6 +54,22 @@ def iniciar_sesion(request):
             return redirect('principal')
 
 
-def cerrar_sesion(request):
+def cerrar_session(request):
     logout(request)
     return redirect('principal')
+
+
+def contacto(request):
+    return render(request, 'contacto.html')
+
+
+def informacion_plato(request):
+    return render(request, 'detalles_plato.html')
+
+
+def comidas_preferidas(request):
+    preferidas = Preferencia.objects.filter(
+        usuario=request.user, preferido=True)
+    return render(request, 'preferencias.html', {
+        'preferencias': preferidas,
+    })

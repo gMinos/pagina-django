@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="preferred-foods">
+    <div class="comidas-preferidas">
         <h1>Tus comidas preferidas</h1>
-        <ul class="preferred-foods-list">
+        <ul class="lista-comidas-preferidas">
             {% for preferencia in preferencias %}
-                <li class="preferred-food">
-                    <div class="food-name">{{ preferencia.nombre_plato_preferido }}</div>
+                <li class="comida-preferida">
+                    <div class="nombre-comida">{{ preferencia.nombre_plato_preferido }}</div>
                     <p class="reason">{{ preferencia.motivo_preferencia }}</p>
                 </li>
             {% endfor %}

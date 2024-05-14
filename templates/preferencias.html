@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="preferred-foods">
-    <h1>Tus comidas preferidas</h1>
-    <ul class="preferred-foods-list">
-        {% for preferencia in preferencias %}
-            <li class="preferred-food">
-                <div class="food-name">{{ preferencia.nombre_plato_preferido }}</div>
-                <p class="reason">{{ preferencia.motivo_preferencia }}</p>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
+    <div class="preferred-foods">
+        <h1>Tus comidas preferidas</h1>
+        <ul class="preferred-foods-list">
+            {% for preferencia in preferencias %}
+                <li class="preferred-food">
+                    <div class="food-name">{{ preferencia.nombre_plato_preferido }}</div>
+                    <p class="reason">{{ preferencia.motivo_preferencia }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
 

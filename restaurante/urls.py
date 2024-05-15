@@ -15,4 +15,5 @@ urlpatterns = [
     path('editar_preferencia/<int:id_preferencia>/', views.editar_preferencia, name='editar_preferencia'),
     path('editar_preferencia/<int:id_preferencia>/actualizar', views.editar_preferencia, name='editar_preferencia'),
     path('editar_preferencia/<int:id_preferencia>/eliminar', views.eliminar_preferencia, name='eliminar_preferencia'),
+    path('editar_preferencia/crear_preferencia', views.agregar_preferencia, name='agregar_preferencia'),
 ]

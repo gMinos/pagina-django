@@ -105,3 +105,22 @@ def eliminar_preferencia(request, id_preferencia):
     if request.method == 'POST':
         preferencia.delete()
         return redirect('preferencias')
+
+
+@login_required
+def agregar_preferencia(request):
+    if request.method == 'POST':
+        try:
+            form = CrearFormularioPreferencia(request.POST).save(commit=False)
+            form.usuario = request.user
+            form.save()
+            return redirect('preferencias')
+        except ValueError:
+            return render(request, 'agregar_preferencia.html', {
+                'form': CrearFormularioPreferencia(),
+                'error': 'Error al agregar preferencia',
+            })
+    else:
+        return render(request, 'agregar_preferencia.html', {
+            'form': CrearFormularioPreferencia()
+        })

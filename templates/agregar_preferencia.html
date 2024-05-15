@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Crea tus preferencias ;)</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Crear</button>
-    </form>
+    <div class="contenedor-principal">
+        <h1 class="titulo">Crea tus preferencias ;)</h1>
+        <form method="POST" class="formulario">
+            {% csrf_token %}
+            <div class="grupo-formulario">
+                {{ formulario }}
+                <button type="submit">Crear</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}

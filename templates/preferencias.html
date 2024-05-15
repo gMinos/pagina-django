@@ -6,12 +6,12 @@
         <ul class="lista-comidas-preferidas">
             {% for preferencia in preferencias %}
                 <li class="comida-preferida">
-                    <div class="nombre-comida"><a href="{% url 'editar_preferencia' preferencia.id %}">{{ preferencia.nombre_plato_preferido }}</a></div>
-                    <p class="reason">{{ preferencia.motivo_preferencia }}</p>
+                    <div class="nombre-comida"><a href="{% url 'editar_preferencia' preferencia.id %}">Titulo: {{ preferencia.nombre_plato_preferido|upper }}</a></div>
+                    <p class="reason">Motivo: {{ preferencia.motivo_preferencia }}</p>
                 </li>
             {% endfor %}
         </ul>
-    <button type="submit"><a href="{% url 'agregar_preferencia' %}">Agregar preferencia</a></button>
+        <button type="submit"><a href="{% url 'agregar_preferencia' %}">Agregar preferencia</a></button>
     </div>
 {% endblock %}
 

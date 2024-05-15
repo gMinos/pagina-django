@@ -14,6 +14,7 @@
     <li><a href="{% url 'contacto' %}">Contacto</a></li>
     {% if user.is_authenticated %}
         <li><a href="{% url 'preferencias' %}">Comidas preferidas</a></li>
+        <li><a href="{% url 'dia_pagar' %}">Dia a pagar</a></li>
         <li><a href="{% url 'cerrar_sesion' %}">Cerrar sesion</a></li>
     {% else %}
         <li><a href="{% url 'iniciar_sesion' %}">Iniciar sesion</a></li>

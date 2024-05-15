@@ -20,6 +20,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_URL = '/iniciar_sesion'
 STATICFILES_DIRS = ['static']
 
 MEDIA_URL = '/media/'

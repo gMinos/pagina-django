@@ -115,7 +115,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;
-    margin: 0 auto; /* Centra el botón horizontalmente */
+    margin: 10px auto; /* Centra el botón horizontalmente */
 }
 
 button:hover {
@@ -222,4 +222,13 @@ textarea {
     text-align: center;
 }
 
+.contenedor-agregar-preferencia {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
 
+button a {
+  text-decoration: none;
+  color: #fff;
+}

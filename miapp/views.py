@@ -43,7 +43,8 @@ def iniciar_session(request):
             'form': AuthenticationForm()
         })
     else:
-        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        user = authenticate(
+            request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
             return render(request, 'iniciar_sesion.html', {
                 'form': AuthenticationForm(),
@@ -79,29 +80,33 @@ def comidas_preferidas(request):
 
 @login_required
 def editar_preferencia(request, id_preferencia):
-    preferencia = get_object_or_404(Preferencia, pk=id_preferencia, usuario=request.user)
+    preferencia = get_object_or_404(
+        Preferencia, pk=id_preferencia, usuario=request.user)
     try:
         if request.method == 'GET':
-            form = CrearFormularioPreferencia(instance=preferencia)
+            formularioPreferencia = CrearFormularioPreferencia(
+                instance=preferencia)
             return render(request, 'editar_preferencia.html', {
                 'preferencia': preferencia,
-                'form': form,
+                'form': formularioPreferencia,
             })
         else:
-            form = CrearFormularioPreferencia(request.POST, instance=preferencia)
-            form.save()
+            formularioPreferencia = CrearFormularioPreferencia(
+                request.POST, instance=preferencia)
+            formularioPreferencia.save()
             return redirect('preferencias')
     except ValueError:
         return render(request, 'editar_preferencia.html', {
             'preferencia': preferencia,
-            'form': form,
+            'formularioPreferencia': formularioPreferencia,
             'error': 'Error al actualizar la preferencia',
         })
 
 
 @login_required()
 def eliminar_preferencia(request, id_preferencia):
-    preferencia = get_object_or_404(Preferencia, pk=id_preferencia, usuario=request.user)
+    preferencia = get_object_or_404(
+        Preferencia, pk=id_preferencia, usuario=request.user)
     if request.method == 'POST':
         preferencia.delete()
         return redirect('preferencias')
@@ -111,16 +116,22 @@ def eliminar_preferencia(request, id_preferencia):
 def agregar_preferencia(request):
     if request.method == 'POST':
         try:
-            form = CrearFormularioPreferencia(request.POST).save(commit=False)
-            form.usuario = request.user
-            form.save()
+            formulario_preferencia = CrearFormularioPreferencia(
+                request.POST).save(commit=False)
+            formulario_preferencia.usuario = request.user
+            formulario_preferencia.save()
             return redirect('preferencias')
         except ValueError:
             return render(request, 'agregar_preferencia.html', {
-                'form': CrearFormularioPreferencia(),
+                'formulario': CrearFormularioPreferencia(),
                 'error': 'Error al agregar preferencia',
             })
     else:
         return render(request, 'agregar_preferencia.html', {
-            'form': CrearFormularioPreferencia()
+            'formulario': CrearFormularioPreferencia()
         })
+
+
+@login_required
+def dia_pagar(request):
+    return render(request, 'dia_pagar.html')

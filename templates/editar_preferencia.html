@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="contenedor-editar-preferencia">
+        <h1>Edita a tu gusto :)</h1>
+        {{ error }}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Actualizar</button>
+        </form>
+        <form action="{% url 'eliminar_preferencia' preferencia.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Eliminar</button>
+        </form>
+    </div>
+{% endblock %}

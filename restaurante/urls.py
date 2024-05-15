@@ -12,4 +12,7 @@ urlpatterns = [
     path('contacto/', views.contacto, name="contacto"),
     path('informacion/', views.informacion_plato, name='informacion'),
     path('comidas_preferidas/', views.comidas_preferidas, name='preferencias'),
+    path('editar_preferencia/<int:id_preferencia>/', views.editar_preferencia, name='editar_preferencia'),
+    path('editar_preferencia/<int:id_preferencia>/actualizar', views.editar_preferencia, name='editar_preferencia'),
+    path('editar_preferencia/<int:id_preferencia>/eliminar', views.eliminar_preferencia, name='eliminar_preferencia'),
 ]

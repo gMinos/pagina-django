@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="comidas-preferidas">
+    <div class="preferidas-comidas">
         <h1>Tus comidas preferidas</h1>
+        <p class="detalles">Haz clic en el título para editar tu preferencia</p>
         <ul class="lista-comidas-preferidas">
             {% for preferencia in preferencias %}
                 <li class="comida-preferida">
-                    <div class="nombre-comida">{{ preferencia.nombre_plato_preferido }}</div>
+                    <div class="nombre-comida"><a href="{% url 'editar_preferencia' preferencia.id %}">{{ preferencia.nombre_plato_preferido }}</a></div>
                     <p class="reason">{{ preferencia.motivo_preferencia }}</p>
                 </li>
             {% endfor %}

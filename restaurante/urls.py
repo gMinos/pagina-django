@@ -20,5 +20,4 @@ urlpatterns = [
          views.eliminar_preferencia, name='eliminar_preferencia'),
     path('editar_preferencia/crear_preferencia',
          views.agregar_preferencia, name='agregar_preferencia'),
-    path('dia_pagar', views.dia_pagar, name='dia_pagar')
 ]

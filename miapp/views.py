@@ -130,8 +130,3 @@ def agregar_preferencia(request):
         return render(request, 'agregar_preferencia.html', {
             'formulario': CrearFormularioPreferencia()
         })
-
-
-@login_required
-def dia_pagar(request):
-    return render(request, 'dia_pagar.html')

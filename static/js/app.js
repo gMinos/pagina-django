@@ -1,21 +1,34 @@
-// Obtener la fecha actual
-function mostrarFechaActual() {
-    var fechaActual = new Date();
-    var dia = fechaActual.getDate();
-    var mes = fechaActual.getMonth() + 1; // Los meses comienzan desde 0
-    var año = fechaActual.getFullYear();
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el elemento donde se mostrará la fecha y hora
+    const fechaElemento = document.getElementById('fecha');
 
-    // Formatear la fecha como "DD/MM/AAAA"
-    var fechaFormateada = dia + '/' + mes + '/' + año;
+    // Función para actualizar la fecha y hora
+    function actualizarFechaHora() {
+        // Obtener la fecha y hora actual
+        const fechaActual = new Date();
 
-    // Mostrar la fecha en el elemento con el id "fecha-actual"
-    var elementoFecha = document.getElementById("fecha-actual");
-    if (elementoFecha) {
-        elementoFecha.textContent = fechaFormateada;
+        // Formatear la fecha
+        const dia = fechaActual.getDate();
+        const mes = fechaActual.getMonth() + 1;
+        const anio = fechaActual.getFullYear();
+
+        // Formatear la hora
+        let horas = fechaActual.getHours();
+        const minutos = fechaActual.getMinutes();
+        const segundos = fechaActual.getSeconds();
+
+        // Ajustar el formato de las horas si es necesario
+        if (horas < 10) {
+            horas = '0' + horas;
+        }
+
+        // Mostrar la fecha y hora en el elemento
+        fechaElemento.textContent = dia + '/' + mes + '/' + anio + ' ' + horas + ':' + minutos + ':' + segundos;
     }
-}
 
-console.log('hola mundo')
+    // Llamar a la función inicialmente para mostrar la fecha y hora actual
+    actualizarFechaHora();
 
-// Llamar a la función para mostrar la fecha actual cuando se cargue la página
-mostrarFechaActual();
+    // Actualizar la fecha y hora cada segundo
+    setInterval(actualizarFechaHora, 1000);
+});

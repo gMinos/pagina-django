@@ -44,7 +44,8 @@ def iniciar_session(request):
         })
     else:
         user = authenticate(
-            request, username=request.POST['username'], password=request.POST['password'])
+            request, username=request.POST['username'],
+            password=request.POST['password'])
         if user is None:
             return render(request, 'iniciar_sesion.html', {
                 'form': AuthenticationForm(),

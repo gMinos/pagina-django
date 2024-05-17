@@ -31,38 +31,38 @@ nav li a:hover {
 }
 
 .contenedor-principal{
-    text-align: center; /* Centra el contenido */
-    margin: 20px; /* Agrega un poco de espacio alrededor del contenido */
+    text-align: center;
+    margin: 20px;
 }
 
 .titulo {
-    margin-bottom: 10px; /* Agrega un poco de espacio entre el título y el mensaje */
+    margin-bottom: 10px;
 }
 
 .detalles {
-    font-style: italic; /* Hace que el mensaje se vea como una indicación */
-    color: #666; /* Cambia el color del mensaje para que sea menos prominente */
-    text-align: center; /* Centra el mensaje */
+    font-style: italic;
+    color: #666;
+    text-align: center;
 }
 
 .contenedor-galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
-    padding: 0 20px; /* Agrega relleno a ambos lados del contenedor */
+    padding: 0 20px;
 }
 
 @media (min-width: 768px) {
     .contenedor-galeria {
         grid-template-columns: repeat(4, 1fr); /* Muestra al menos 4 imágenes por fila en pantallas más grandes */
-        padding: 0; /* Elimina el relleno en pantallas más grandes */
+        padding: 0;
     }
 }
 
 .contenedor-galeria img {
-    width: 100%; /* Ajustar el ancho al 100% del contenedor */
-    height: 200px; /* Establecer una altura fija para todas las imágenes */
-    object-fit: cover; /* Ajustar el contenido de la imagen para que cubra el tamaño definido */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
@@ -73,23 +73,23 @@ nav li a:hover {
 
 .formulario {
     max-width: 400px;
-    margin: auto; /* Centra horizontalmente */
+    margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
-    text-align: center; /* Centra los elementos internamente */
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .grupo-formulario {
     margin-bottom: 20px;
-    text-align: left; /* Ajusta el texto a la izquierda dentro de la caja */
+    text-align: left; 
 }
 
 label {
     display: block;
     font-weight: bold;
-    text-align: center; /* Centra el texto dentro de la caja */
+    text-align: center;
 }
 
 input[type="text"],
@@ -98,12 +98,12 @@ input[type="password"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Ajusta el ancho del borde y el relleno dentro de la caja */
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    outline: none; /* Elimina el resaltado del borde al hacer clic */
+    outline: none; 
 }
 
 button {
@@ -115,7 +115,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;
-    margin: 10px auto; /* Centra el botón horizontalmente */
+    margin: 10px auto;
 }
 
 button:hover {
@@ -144,13 +144,13 @@ button:hover {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    overflow: hidden; /* Para evitar que el texto se desborde */
+    overflow: hidden;
 }
 
 .nombre-comida {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #333; /* Cambia el color del texto a gris oscuro */
+    color: #333;
 }
 
 .nombre-comida a {

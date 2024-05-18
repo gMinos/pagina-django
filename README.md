@@ -29,7 +29,7 @@ Para clonar este repositorio, sigue estos pasos:
 4. **Clonar el repositorio**:
    En la terminal, navega al directorio donde deseas clonar el repositorio y ejecuta el siguiente comando:
    ```bash
-   git clone https://github.com/tu_usuario/pagina-web-restaurante.git
+   git clone https://github.com/gMinos/pagina-django.git
 
 5. **Entra al directorio del repositorio clonado**
    Una vez clonado el repositorio puedes entrar al directorio con el siquiente comando:
